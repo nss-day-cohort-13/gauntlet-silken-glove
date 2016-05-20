@@ -28,40 +28,37 @@ var Gauntlet = (function(brains) {
     };
     brains.GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
 
+      brains.GuildHall.Shaman = function() {
+        this.name = "Shaman";
+        this.healthBonus = this.healthBonus + 5;
+        this.strengthBonus = this.strengthBonus - 10;
+        this.intelligenceBonus = this.intelligenceBonus + 20;
+      };
+      brains.GuildHall.Shaman.prototype = new Gauntlet.GuildHall.Mage();
 
-    brains.GuildHall.Shaman = function() {
-      this.name = "Shaman";
-      this.healthBonus = this.healthBonus + 5;
-      this.strengthBonus = this.strengthBonus - 10;
-      this.intelligenceBonus = this.intelligenceBonus + 20;
-    };
-    brains.GuildHall.Shaman.prototype = new Gauntlet.GuildHall.Mage();
+      brains.GuildHall.Wizard = function() {
+        this.name = "Wizard";
+        this.healthBonus = this.healthBonus - 15;
+        this.strengthBonus = this.strengthBonus - 25;
+        this.intelligenceBonus = this.intelligenceBonus + 40;
+      };
+      brains.GuildHall.Wizard.prototype = new Gauntlet.GuildHall.Mage();
 
+      brains.GuildHall.Conjurer = function() {
+        this.name = "Conjurer";
+        this.healthBonus = this.healthBonus - 5;
+        this.strengthBonus = this.strengthBonus - 10;
+        this.intelligenceBonus = this.intelligenceBonus + 10;
+      };
+      brains.GuildHall.Conjurer.prototype = new Gauntlet.GuildHall.Mage();
 
-    brains.GuildHall.Wizard = function() {
-      this.name = "Wizard";
-      this.healthBonus = this.healthBonus - 15;
-      this.strengthBonus = this.strengthBonus - 25;
-      this.intelligenceBonus = this.intelligenceBonus + 40;
-    };
-    brains.GuildHall.Wizard.prototype = new Gauntlet.GuildHall.Mage();
-
-
-    brains.GuildHall.Conjurer = function() {
-      this.name = "Conjurer";
-      this.strengthBonus = this.strengthBonus - 10;
-      this.intelligenceBonus = this.intelligenceBonus + 10;
-    };
-    brains.GuildHall.Conjurer.prototype = new Gauntlet.GuildHall.Mage();
-
-
-    brains.GuildHall.Sorcerer = function() {
-      this.name = "Sorcerer";
-      this.healthBonus = this.healthBonus - 5;
-      this.strengthBonus = this.strengthBonus - 20;
-      this.intelligenceBonus = this.intelligenceBonus + 30;
-    };
-    brains.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
+      brains.GuildHall.Sorcerer = function() {
+        this.name = "Sorcerer";
+        this.healthBonus = this.healthBonus - 5;
+        this.strengthBonus = this.strengthBonus - 20;
+        this.intelligenceBonus = this.intelligenceBonus + 30;
+      };
+      brains.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
 
   return brains;
 })(Gauntlet || {})
