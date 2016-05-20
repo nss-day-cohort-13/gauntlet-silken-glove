@@ -59,7 +59,7 @@ Concatenates properties on combatant and spell objects into a string that reads 
 Defined on `Gauntlet.Combatants.Player.prototype` (in player.js, line 43). This function accepts a Weapon constructor function as an argument (see weapons.js). `new WarAxe()` is passed in on line 5, and `new Broadsword()` is passed in on line 11.
 
 ###### `.generateClass()`
-Defined on `Gauntlet.Combatants.Player.prototype` (in player.js, line 47). This function randomizes a class for the player's character.
+Defined on `Gauntlet.Combatants.Player.prototype` (in player.js, line 47). This function randomizes a class for the player's character and the enemy.
 
 ##### Variables
 ###### `warrior`
@@ -69,7 +69,7 @@ New instance of `Gauntlet.Combatants.Human` used in the combat test.
 New instance of `Gauntlet.Combatants.Orc` used in the combat test.
 
 ###### `spell`
-New instance of `Gauntlet.Spellbook.Spell` used in the combat test.
+New instance of `Gauntlet.Spellbook.Sphere` used in the combat test.
 
 ###### `nextCard`
 When one of the navigation buttons is clicked (other than "Back"), this variable's value is set to the value of the "next" attribute on the link that was clicked. The "next" attribute holds the name of a card class that should display next. The two card classes that appear in this script are `.card--class` and `.card--weapon`.
