@@ -20,10 +20,16 @@ console.log("spell: ", spell.toString());
 /*
   Create global variables to hold player name, class and weapon,
   to be defined as player navigates through character creation.
+
+  Create global variables for what will become the player character
+  and the enemy.
 */
+
 var userName = "";
 var userClass = "";
 var userWeapon = "";
+var player;
+var enemy;
 
 $(document).ready(function() {
   /*
