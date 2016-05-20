@@ -44,10 +44,10 @@ All buttons dealing with navigation have the class that's selected here. Some of
 
 ##### Named functions
 ###### `new Gauntlet.Combatants.Human()`
-Defines a new object with human characteristics that inherits properties from `Player`, `Combatants`, and `Gauntlet` (see player.js, line 66).
+Defines a new object with human characteristics that inherits properties from `Gauntlet.Combatants.Player` (see player.js, line 66).
 
 ###### `new Gauntlet.Combatants.Orc()`
-Defines a new object with orc characteristics that inherits properties from `Monster`, `Combatants`, and `Gauntlet` (see enemies.js, line 1).
+Defines a new object with orc characteristics that inherits properties from `Gauntlet.Combatants.Monster` and `[...].Player` (see enemies.js, line 1).
 
 ###### `new Gauntlet.Spellbook.Sphere()`
 Defines a new spell object that randomizes both damage type and number.
