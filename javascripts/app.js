@@ -53,10 +53,11 @@ $(document).ready(function() {
         console.log("userName: ", userName);
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = (userClass !== "");
         break;
       case "card--battleground":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = (userWeapon !== "");
+        Gauntlet.combatSetup();
         break;
     }
 
@@ -91,7 +92,6 @@ $(document).ready(function() {
   $(".weapon__link").click(function(e){
     userWeapon = $(this).children("span.btn__text").text();
     console.log("userWeapon: ", userWeapon);
-    Gauntlet.combatSetup();
   });
 
   /*
