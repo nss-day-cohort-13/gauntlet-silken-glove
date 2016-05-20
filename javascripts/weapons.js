@@ -1,3 +1,6 @@
+//base function used to generate weapons
+//see line 43 in player.js
+
 var Weapon = function() {
   this.name = "bare hands";
   this.damage = 1;
@@ -28,4 +31,3 @@ var WarAxe = function() {
   this.hands = 2;
 };
 WarAxe.prototype = new Weapon();
-
