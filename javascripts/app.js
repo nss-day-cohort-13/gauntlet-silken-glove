@@ -44,6 +44,7 @@ $(document).ready(function() {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "");
         userName = $("#player-name").val();
+        console.log("userName: ", userName);
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
@@ -83,6 +84,13 @@ $(document).ready(function() {
   */
   $(".weapon__link").click(function(e){
     userWeapon = $(this).children("span.btn__text").text();
+    console.log("userWeapon: ", userWeapon);
   });
+
+  /*
+    When the attack button is clicked, the function to resolve
+    combat is triggered.
+  */
+  $(".attack").click(Gauntlet.Combat);
 
 });
