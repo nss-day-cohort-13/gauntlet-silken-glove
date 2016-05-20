@@ -1,6 +1,6 @@
 # app.js
 
-The app.js file creates some basic functionality for the site itself, but it has little to do with anything gameplay-related. However, it also has the only hint we're given about how battle should play out per the original designer's plans. The fighting itself is never resolved, but the character generation stuff is a good enough place to start.
+The app.js file creates some basic functionality for the site itself, but it has little to do with anything gameplay-related. However, it has the only hint we're given about how battle should play out per the original designer's plans. The fighting is never resolved, but the character generation stuff is a good enough place to start. Beyond that, **the bulk of this script is concerned with defiing the logic for navigating between different HTML sections.**
 
 ### Outline
 So broadly speaking, here's what's happening in app.js:
