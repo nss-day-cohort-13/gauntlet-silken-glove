@@ -91,12 +91,13 @@ $(document).ready(function() {
   $(".weapon__link").click(function(e){
     userWeapon = $(this).children("span.btn__text").text();
     console.log("userWeapon: ", userWeapon);
+    Gauntlet.combatSetup();
   });
 
   /*
     When the attack button is clicked, the function to resolve
     combat is triggered.
   */
-  $(".attack").click(Gauntlet.Combat);
+  $(".attack").click(Gauntlet.combat);
 
 });
