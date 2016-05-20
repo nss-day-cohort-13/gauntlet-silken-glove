@@ -1,4 +1,7 @@
 
+//base function used to generate weapons
+//see line 43 in player.js
+
 var Gauntlet = (function(Gauntlet) {
 
     var Weapon = function() {
