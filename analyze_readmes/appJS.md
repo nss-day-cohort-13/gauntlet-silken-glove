@@ -13,10 +13,10 @@ So broadly speaking, here's what's happening in app.js:
 ##### Lines 1-18: Combat test
   * A new instance of `Gauntlet.Combatants.Human` is created in the variable `warrior`, and the warrior is given a `WarAxe` as a weapon. Similarly, a new instance of `Gauntlet.Combatants.Orc` is created in the variable `orc`, and the orc is given a `Broadsword` as a weapon.
   * A random class is generated for both the human and the orc, and both are introduced by a sentence created using the `.toString()` method.
-  * A new instance of `Gauntlet.Spellbook.Sphere` is created in the variable spell. Elemental damage is calculated when the object is instantiated, but no damage is applied, and combat is not resolved.
+  * A new instance of `Gauntlet.Spellbook.Sphere` is created in the variable spell. Elemental damage is calculated when the object is instantiated, but no damage is applied, and combat is not resolved. The spell cast is detailed with the `.toString()` method.
 
 ##### Lines 21-[end]: Document ready
-  * When `document` is loaded, the html section with the id `#player-setup` is displayed.
+  * When `document` is loaded, the HTML section with the id `#player-setup` is displayed.
   * Click listeners are added to navigation links with anonymous functions that define what pages are hidden and displayed.
 
 ##### Lines 27-48: Navigating forward
