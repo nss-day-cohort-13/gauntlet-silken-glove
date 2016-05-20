@@ -64,7 +64,7 @@
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue" href="#">
                 <span class="btn__prompt">></span>
-                <span class="btn__text">berserker</span>
+                <span class="btn__text">Berserker</span>
               </a>
             </div>
 
@@ -142,7 +142,7 @@
 
     <section id="weapon-select" class="card card--weapon">
       <div class="card__prompt">
-        <div>choose your weapon</div>
+        <div>Choose your weapon</div>
         <div>
           <a class="card__back btn btn--small"
              href="#"
@@ -197,12 +197,46 @@
            href="#"
            next="card--battleground">
           <span class="btn__prompt">></span>
-          <span class="btn__text">defeat your enemies</span>
+          <span class="btn__text">Defeat your enemies</span>
         </a>
       </div>
     </section>
 
-    <section id="battleground" class="card card--battleground"></section>
+    <section id="battleground" class="card card--battleground">
+        <div class="card__prompt">
+          <div>FIGHTTTTT!!!!!</div>
+          <a class="card__back btn btn--small"
+             href="#"
+             previous="card--weapon">
+            <span class="btn__prompt">&lt;</span>
+            <span class="btn__text">Back</span>
+          </a>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="column col-lg-2">
+            </div>
+            <div id="player_stats" class="column col-lg-3">
+            <!-- Player stats will be displayed in this div -->
+            </div>
+            <div class="column col-lg-2">
+            </div>
+            <div id="enemy_stats" class="column col-lg-3">
+            <!-- Enemy stats will be displayed in this div -->
+            </div>
+            <div class="column col-lg-2">
+            </div>
+            <div class="card__button">
+              <a class="btn btn--big btn--orange launchAttack"
+                 href="#">
+                <span class="btn__prompt">></span>
+                <span class="btn__text">ATTACK</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
 
   </article>
 
