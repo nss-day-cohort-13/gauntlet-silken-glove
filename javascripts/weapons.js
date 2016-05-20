@@ -2,7 +2,7 @@
 //base function used to generate weapons
 //see line 43 in player.js
 
-var Gauntlet = (function(Gauntlet) {
+var Gauntlet = (function(ouch) {
 
     var Weapon = function() {
       this.name = "bare hands";
@@ -35,5 +35,5 @@ var Gauntlet = (function(Gauntlet) {
     };
     WarAxe.prototype = new Weapon();
 
-  return Gauntlet;
+  return ouch;
 })(Gauntlet || {})
