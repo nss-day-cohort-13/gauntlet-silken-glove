@@ -2,13 +2,13 @@
   Test code to generate a human player and an orc player
  */
 var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new WarAxe());
+warrior.setWeapon(new Gauntlet.WarAxe());
 warrior.generateClass();  // This will be used for "Surprise me" option
 console.log(warrior.toString());
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
-orc.setWeapon(new BroadSword());
+orc.setWeapon(new Gauntlet.BroadSword());
 console.log(orc.toString());
 
 /*
@@ -91,12 +91,13 @@ $(document).ready(function() {
   $(".weapon__link").click(function(e){
     userWeapon = $(this).children("span.btn__text").text();
     console.log("userWeapon: ", userWeapon);
+    Gauntlet.combatSetup();
   });
 
   /*
     When the attack button is clicked, the function to resolve
     combat is triggered.
   */
-  $(".attack").click(Gauntlet.Combat);
+  $(".attack").click(Gauntlet.combat);
 
 });

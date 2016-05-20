@@ -4,7 +4,7 @@
 
 var Gauntlet = (function(ouch) {
 
-    var Weapon = function() {
+    ouch.Weapon = function() {
       this.name = "bare hands";
       this.damage = 1;
       this.hands = 2;
@@ -14,26 +14,26 @@ var Gauntlet = (function(ouch) {
       }
     };
 
-    var Dagger = function() {
+    ouch.Dagger = function() {
       this.name = "dagger";
       this.damage = 4;
       this.hands = 1;
     };
-    Dagger.prototype = new Weapon();
+    ouch.Dagger.prototype = new ouch.Weapon();
 
-    var BroadSword = function() {
+    ouch.BroadSword = function() {
       this.name = "broad sword";
       this.damage = 14;
       this.hands = 2;
     };
-    BroadSword.prototype = new Weapon();
+    ouch.BroadSword.prototype = new ouch.Weapon();
 
-    var WarAxe = function() {
+    ouch.WarAxe = function() {
       this.name = "war axe";
       this.damage = 18;
       this.hands = 2;
     };
-    WarAxe.prototype = new Weapon();
+    ouch.WarAxe.prototype = new ouch.Weapon();
 
   return ouch;
 })(Gauntlet || {})
