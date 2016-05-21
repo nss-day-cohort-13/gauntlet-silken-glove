@@ -40,6 +40,7 @@ Gauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
   constructor function.
  */
 Gauntlet.Combatants.Aristocrat = function() {
+  var randomSkin;
   this.species = "Aristocrat";
   this.vigor = 90;
   this.potency = 90;
