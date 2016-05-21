@@ -57,7 +57,8 @@ $(document).ready(function() {
         break;
       case "card--battleground":
         moveAlong = (userWeapon !== "");
-        Gauntlet.combatSetup();
+        Gauntlet.combatSetup(userClass, userName, userWeapon);
+        Gauntlet.enemySetup();
         break;
     }
 
@@ -98,6 +99,6 @@ $(document).ready(function() {
     When the attack button is clicked, the function to resolve
     combat is triggered.
   */
-  $(".attack").click(Gauntlet.combat);
+  $(".launchAttack").click(Gauntlet.combat);
 
 });
