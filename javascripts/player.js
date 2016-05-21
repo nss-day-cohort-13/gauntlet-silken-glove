@@ -40,7 +40,6 @@ Gauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
   constructor function.
  */
 Gauntlet.Combatants.Aristocrat = function() {
-  var randomSkin;
   this.species = "Aristocrat";
   this.vigor = 90;
   this.potency = 90;
@@ -58,6 +57,18 @@ Gauntlet.Combatants.Peasant = function() {
   this.filth = 90;
   this.hunger = 90;
   this.poverty = 90;
+  this.allowedClasses = ["Tosher", "Mudlark", "Pauper"];
+  this.generateClass = function() {
+  // Get a random index from the allowed classes array
+  var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
+
+  // Get the string at the index
+  var randomClass = this.allowedClasses[random];
+
+  // Composes the corresponding player class into the player object
+  this.class = new Gauntlet.GuildHall[randomClass]();
+  return this.class;
+  }
 };
 
 Gauntlet.Combatants.Peasant.prototype = new Gauntlet.Combatants.Player();

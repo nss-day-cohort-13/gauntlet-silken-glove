@@ -1,33 +1,42 @@
 var Gauntlet = (function(aah){
 
-  aah.Combatants.Orc = function() {
+  aah.GuildHall.Tosher = function() {
+    this.name = "Tosher";
     this.health = this.health + 20;
-    this.species = "Orc";
-    this.allowedClasses = ["Warrior", "Berserker"];
-    this.allowedWeapon = ["Dagger", "BroadSword", "WarAxe"];
-
-    this.generateClass = function() {
-      // Get a random index from the allowed classes array
-      var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
-
-      // Get the string at the index
-      var randomClass = this.allowedClasses[random];
-
-      // Composes the corresponding player class into the player object
-      this.class = new Gauntlet.GuildHall[randomClass]();
-      return this.class;
-    }
-
+    this.poverty += 5;
+    this.allowedWeapon = ["Excrement", "Tomato", "Damnedness"];
     this.generateWeapon = function() {
       var random = Math.round(Math.random()* (this.allowedWeapon.length - 1));
-
       var randomWeapon = this.allowedWeapon[random];
-
       this.weapon = new Gauntlet[randomWeapon]();
     }
   };
+  aah.GuildHall.Tosher.prototype = new Gauntlet.Combatants.Peasant();
 
-  aah.Combatants.Orc.prototype = new Gauntlet.Combatants.Monster();
+  aah.GuildHall.Mudlark = function() {
+    this.name = "Mudlark"
+    this.health = this.health + 10;
+    this.filth += 5;
+    this.allowedWeapon = ["Excrement", "Tomato", "Damnedness"];
+    this.generateWeapon = function() {
+      var random = Math.round(Math.random()* (this.allowedWeapon.length - 1));
+      var randomWeapon = this.allowedWeapon[random];
+      this.weapon = new Gauntlet[randomWeapon]();
+    }
+  };
+  aah.GuildHall.Mudlark.prototype = new Gauntlet.Combatants.Peasant();
+
+  aah.GuildHall.Pauper = function() {
+    this.name = "Pauper"
+    this.hunger += 5;
+    this.allowedWeapon = ["Excrement", "Tomato", "Damnedness"];
+    this.generateWeapon = function() {
+      var random = Math.round(Math.random()* (this.allowedWeapon.length - 1));
+      var randomWeapon = this.allowedWeapon[random];
+      this.weapon = new Gauntlet[randomWeapon]();
+    }
+  };
+  aah.GuildHall.Pauper.prototype = new Gauntlet.Combatants.Peasant();
 
   return aah;
 
