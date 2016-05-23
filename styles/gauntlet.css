@@ -50,6 +50,10 @@ p {
   font-size: .65em;
 }
 
+.stat_select {
+  font-size: 1.2em;
+}
+
 .right {
   text-align: right;
 }
