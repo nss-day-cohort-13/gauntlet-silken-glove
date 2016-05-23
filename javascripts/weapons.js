@@ -86,14 +86,14 @@ var Gauntlet = (function(ouch) {
     ouch.rotten_fruit = function(){
       this.name = "Rotten Fruit";
       this.damage = 10;
-      this.phrases = ["Hurls a half eaten, rotten tomato", "Tosses a molded pear"];
+      this.phrases = ["Hurls a half eaten, rotten tomato!", "Tosses a molded pear!"];
     };
     ouch.rotten_fruit.prototype = new ouch.Weapon();
 
     ouch.excrement = function(){
       this.name = "excrement";
       this.damage = 10;
-      this.phrases = ["Threateningly weilds their own feces, while glaring wildly", "Tosses excrement at you"];
+      this.phrases = ["Threateningly wields their own feces, while glaring wildly!", "Tosses excrement at you!"];
     };
     ouch.excrement.prototype = new ouch.Weapon();
 
