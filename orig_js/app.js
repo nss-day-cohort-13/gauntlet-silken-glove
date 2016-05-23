@@ -1,4 +1,23 @@
 /*
+  Test code to generate a human player and an orc player
+ */
+var warrior = new Gauntlet.Combatants.Human();
+warrior.setWeapon(new Gauntlet.WarAxe());
+warrior.generateClass();  // This will be used for "Surprise me" option
+console.log(warrior.toString());
+
+var orc = new Gauntlet.Combatants.Orc();
+orc.generateClass();
+orc.setWeapon(new Gauntlet.BroadSword());
+console.log(orc.toString());
+
+/*
+  Test code to generate a spell
+ */
+var spell = new Gauntlet.SpellBook.Sphere();
+console.log("spell: ", spell.toString());
+
+/*
   Create global variables to hold player name, class and weapon,
   to be defined as player navigates through character creation.
 
