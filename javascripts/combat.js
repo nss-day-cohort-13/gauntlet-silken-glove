@@ -40,7 +40,7 @@ var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage);
 var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
 $("#player_weapon").html(`<p class="weapon_display">${...}</p><p>Damage: ${playerDamage}</p>`);
 console.log(playerDamage);
-$("#player_weapon").html(`<p class="weapon_display">${...}</p><p>Damage: ${enemyDamage}</p>`);
+$("#enemy_weapon").html(`<p class="weapon_display">${...}</p><p>Damage: ${enemyDamage}</p>`);
 console.log(enemyDamage);
 enemy.health -= playerDamage;
 player.health -= enemyDamage;
