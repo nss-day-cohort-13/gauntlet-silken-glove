@@ -16,6 +16,10 @@ body {
   min-width: 500px;
 }
 
+.row {
+  margin-bottom: 50px;
+}
+
 
 
 /*
@@ -36,6 +40,10 @@ body {
   font-size: 1.1em;
   margin: 20px;
   text-align: center;
+}
+
+h4 {
+  font-size: 1em;
 }
 
 p {
