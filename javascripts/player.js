@@ -30,12 +30,9 @@ var Gauntlet = (function(aug){
     this.vigor = 10;
     this.potency = 10;
     this.richesse = 10;
-
-    this.allowedWeapon = ["your_Mother", "Curses", "character_Attacks"];
-
     this.pomposity = 10;
     this.social_grace = 10;
-
+    this.allowedWeapon = ["your_Mother", "Curses", "character_Attacks"];
   };
   aug.Combatants.Aristocrat.prototype = new aug.Combatants.Player();
 
@@ -45,25 +42,14 @@ var Gauntlet = (function(aug){
     constructor function.
    */
   aug.Combatants.Peasant = function() {
+    this.species = "Peasant";
     this.health = this.health - 30;
     this.filth = 10;
     this.hunger = 10;
     this.poverty = 10;
     this.social_disease = 10;
     this.damnedness = 10;
-    this.allowedClasses = ["Tosher", "Mudlark", "Pauper"];
-    this.allowedWeapon = ["rotten_fruit", "excrement"];
-    this.generateClass = function() {
-    // Get a random index from the allowed classes array
-    var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
-
-    // Get the string at the index
-    var randomClass = this.allowedClasses[random];
-
-    // Composes the corresponding player class into the player object
-    this.class = new Gauntlet.GuildHall[randomClass]();
-    return this.class;
-    };
+    this.allowedWeapon = ["excrement", "rotten_fruit"];
     this.generateWeapon = function() {
       var random = Math.round(Math.random()* (this.allowedWeapon.length - 1));
       var randomWeapon = this.allowedWeapon[random];

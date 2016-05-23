@@ -1,7 +1,9 @@
 var Gauntlet = (function(aah){
 
+  aah.GuildHall.allowedEnemyClasses = ["Tosher", "Mudlark", "Pauper"];
+
   aah.GuildHall.Tosher = function() {
-    this.name = "Tosher";
+    this.class = "Tosher";
     this.health = this.health + 20;
     this.filth += 4;
     this.hunger += 4;
@@ -12,7 +14,7 @@ var Gauntlet = (function(aah){
   aah.GuildHall.Tosher.prototype = new Gauntlet.Combatants.Peasant();
 
   aah.GuildHall.Mudlark = function() {
-    this.name = "Mudlark"
+    this.class = "Mudlark"
     this.health = this.health + 10;
     this.filth += 3;
     this.hunger += 5;
@@ -23,7 +25,7 @@ var Gauntlet = (function(aah){
   aah.GuildHall.Mudlark.prototype = new Gauntlet.Combatants.Peasant();
 
   aah.GuildHall.Pauper = function() {
-    this.name = "Pauper"
+    this.class = "Pauper"
     this.filth += 1;
     this.hunger += 6;
     this.poverty += 3;
@@ -33,4 +35,5 @@ var Gauntlet = (function(aah){
   aah.GuildHall.Pauper.prototype = new Gauntlet.Combatants.Peasant();
 
   return aah;
+
 }(Gauntlet || {}));
