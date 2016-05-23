@@ -3,7 +3,7 @@ var Gauntlet = (function(battle) {
 //Display the initial statistics for the player and the enemy.
 
 battle.combatSetup = function(userClass, userName, userWeapon) {
-    player = new Gauntlet.Combatants.Human();
+    player = new Gauntlet.Combatants.Aristocrat();
     console.log("player", player)
     console.log(userClass);
     player.name = userName;
@@ -22,7 +22,7 @@ battle.displayStats = function (){
       <p> health: ${enemy.health} </p>  <p> strength: ${enemy.strength} </p> <p>weapon: ${enemy.weapon}</p>`);
 }
 battle.enemySetup = function() {
-    enemy = new Gauntlet.Combatants.Orc();
+    enemy = new Gauntlet.Combatants.Peasant();
     enemy.generateClass();
     enemy.generateWeapon();
     console.log("enemy", enemy)

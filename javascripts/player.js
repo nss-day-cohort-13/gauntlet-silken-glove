@@ -45,6 +45,7 @@ var Gauntlet = (function(aug){
     this.hunger = 10;
     this.poverty = 10;
     this.allowedClasses = ["Tosher", "Mudlark", "Pauper"];
+    this.allowedWeapon = ["Excrement", "Tomato", "Damnedness"];
     this.generateClass = function() {
     // Get a random index from the allowed classes array
     var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
@@ -55,6 +56,11 @@ var Gauntlet = (function(aug){
     // Composes the corresponding player class into the player object
     this.class = new Gauntlet.GuildHall[randomClass]();
     return this.class;
+    };
+    this.generateWeapon = function() {
+      var random = Math.round(Math.random()* (this.allowedWeapon.length - 1));
+      var randomWeapon = this.allowedWeapon[random];
+      this.weapon = new Gauntlet[randomWeapon]();
     }
   };
 
