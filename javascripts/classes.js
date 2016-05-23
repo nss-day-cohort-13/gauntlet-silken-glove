@@ -8,7 +8,7 @@ var Gauntlet = (function(money) {
   money.GuildHall = {};
 
   money.GuildHall.RobberBaron = function() {
-    this.class = "Robber Baron"
+    this.class = "RobberBaron"
     this.vigor += 2;
     this.potency += 2;
     this.richesse += 4;
