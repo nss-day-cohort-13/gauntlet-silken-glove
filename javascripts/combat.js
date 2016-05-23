@@ -3,6 +3,7 @@ var Gauntlet = (function(battle) {
 //Display the initial statistics for the player and the enemy.
 
 battle.combatSetup = function(userClass, userName, userWeapon) {
+  console.log("userClass", userClass);
     player = new Gauntlet.GuildHall[userClass];
     player.name = userName;
     player.weapon = new Gauntlet[userWeapon];
