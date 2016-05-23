@@ -6,7 +6,7 @@ battle.combatSetup = function(userClass, userName, userWeapon) {
     player = new Gauntlet.GuildHall[userClass];
     player.name = userName;
     player.weapon = new Gauntlet[userWeapon];
-    $("#player_stats").html(`<p>adventurer: ${player.name}</p> <p>class: ${player.class}</p>
+    $("#player_stats").html(`<p class="player_name">adventurer: ${player.name}</p> <p class="player_name">class: ${player.class}</p>
       <p>species: ${player.species}</p> <p>health: ${player.health}</p>
       <p>Vigor: ${player.vigor}</p>
       <p>Potency: ${player.potency}</p>
@@ -17,7 +17,7 @@ battle.combatSetup = function(userClass, userName, userWeapon) {
   }
 
 battle.displayStats = function (){
-      $("#player_stats").html(`<p>adventurer: ${player.name}</p> <p>class: ${player.class}</p>
+      $("#player_stats").html(`<p class="player_name">adventurer: ${player.name}</p> <p class="player_name">class: ${player.class}</p>
       <p>species: ${player.species}</p> <p>health: ${player.health}</p>
       <p>Vigor: ${player.vigor}</p>
       <p>Potency: ${player.potency}</p>
@@ -25,7 +25,7 @@ battle.displayStats = function (){
       <p>Pomposity: ${player.pomposity}</p>
       <p>Social Grace: ${player.social_grace}</p>
       <p>weapon: ${player.weapon}</p>`);
-       $("#enemy_stats").html(`<p> enemy: ${enemy.name} </p> <p> class: ${enemy.class}</p> <p> species: ${enemy.species}</p>
+       $("#enemy_stats").html(`<p class="player_name"> enemy: ${enemy.name} </p> <p class="player_name"> class: ${enemy.class}</p> <p> species: ${enemy.species}</p>
       <p>health: ${enemy.health} </p>
       <p>Filth: ${enemy.filth}</p>
       <p>Poverty: ${enemy.poverty}</p>
@@ -39,7 +39,7 @@ battle.enemySetup = function() {
     var enemyClass = Gauntlet.GuildHall.allowedEnemyClasses[random];
     enemy = new Gauntlet.GuildHall[enemyClass];
     enemy.generateWeapon();
-    $("#enemy_stats").html(`<p> enemy: ${enemy.name} </p> <p> class: ${enemy.class}</p> <p> species: ${enemy.species}</p>
+    $("#enemy_stats").html(`<p class="player_name"> enemy: ${enemy.name} </p> <p class="player_name"> class: ${enemy.class}</p> <p> species: ${enemy.species}</p>
       <p>health: ${enemy.health} </p>
       <p>Filth: ${enemy.filth}</p>
       <p>Poverty: ${enemy.poverty}</p>
@@ -60,9 +60,9 @@ var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
 var playerPhrase =player.weapon.generatePhrase();
 var enemyPhrase = enemy.weapon.generatePhrase();
 console.log(playerPhrase);
-$("#player_weapon").html(`<p class="weapon_display">${playerPhrase}</p><p>Damage: ${playerDamage}</p>`);
+$("#player_weapon").html(`<p class="weapon_display">${playerPhrase}</p><p class="weapon_display">Damage: ${playerDamage}</p>`);
 console.log(playerDamage);
-$("#enemy_weapon").html(`<p class="weapon_display">${enemyPhrase}</p><p>Damage: ${enemyDamage}</p>`);
+$("#enemy_weapon").html(`<p class="weapon_display">${enemyPhrase}</p><p class="weapon_display">Damage: ${enemyDamage}</p>`);
 console.log(enemyDamage);
 enemy.health -= playerDamage;
 player.health -= enemyDamage;
