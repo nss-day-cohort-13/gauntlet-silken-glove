@@ -4,26 +4,27 @@
  */
 
 var Gauntlet = (function(money) {
+
   money.GuildHall = {};
 
   money.GuildHall.RobberBaron = function() {
     this.name = "Robber Baron"
     this.richesse += 5;
   };
-  money.GuildHall.RobberBaron.prototype = new Gauntlet.GuildHall.Aristocrat();
+  money.GuildHall.RobberBaron.prototype = new Gauntlet.Combatants.Aristocrat();
 
   money.GuildHall.LandedGentry = function() {
     this.name = "LandedGentry";
     this.vigor += 5;
   };
-  money.GuildHall.LandedGentry.prototype = new Gauntlet.GuildHall.Aristocrat();
+  money.GuildHall.LandedGentry.prototype = new Gauntlet.Combatants.Aristocrat();
 
   money.GuildHall.ChivalrousCourter = function() {
     this.name = "ChivalrousCourter";
     this.potency += 5;
   };
-  money.GuildHall.ChivalrousCourter.prototype = new Gauntlet.GuildHall.Aristocrat();
+  money.GuildHall.ChivalrousCourter.prototype = new Gauntlet.Combatants.Aristocrat();
 
   return money;
 
-})(Gauntlet || {})
+}(Gauntlet || {}));
