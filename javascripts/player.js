@@ -30,6 +30,8 @@ var Gauntlet = (function(aug){
     this.vigor = 10;
     this.potency = 10;
     this.richesse = 10;
+    this.pomposity = 10;
+    this.social_grace = 10;
   };
   aug.Combatants.Aristocrat.prototype = new aug.Combatants.Player();
 
@@ -43,6 +45,8 @@ var Gauntlet = (function(aug){
     this.filth = 10;
     this.hunger = 10;
     this.poverty = 10;
+    this.social_disease = 10;
+    this.damnedness = 10;
     this.allowedClasses = ["Tosher", "Mudlark", "Pauper"];
     this.allowedWeapon = ["Excrement", "Tomato", "Damnedness"];
     this.generateClass = function() {
