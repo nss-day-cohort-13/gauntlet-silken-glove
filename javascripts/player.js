@@ -26,7 +26,6 @@ var Gauntlet = (function(aug){
     constructor function.
    */
   aug.Combatants.Aristocrat = function() {
-    var randomSkin;
     this.species = "Aristocrat";
     this.vigor = 10;
     this.potency = 10;

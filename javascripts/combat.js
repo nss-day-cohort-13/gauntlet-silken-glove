@@ -27,7 +27,7 @@ battle.enemySetup = function() {
     enemy.generateWeapon();
     console.log("enemy", enemy)
     $("#enemy_stats").html(`<p> enemy: ${enemy.name} </p> <p> class: ${enemy.class}</p> <p> species: ${enemy.species}</p>
-      <p> health: ${enemy.health} </p>  <p> strength: ${enemy.strength} </p> <p>weapon: ${enemy.weapon}</p>`)
+      <p> health: ${enemy.health} </p>  <p> strength: ${enemy.strength} </p> <p>weapon: ${enemy.weapon}</p>`);
 
 }
 //Have a button with the label "Attack".
@@ -37,8 +37,10 @@ battle.enemySetup = function() {
 
 battle.combat = function() {
 var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage);
-var enemyDamage = Math.floor(Math.random() * 10 + enemy.weapon.damage);
+var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
+$("#player_weapon").html(`<p class="weapon_display">${...}</p><p>Damage: ${playerDamage}</p>`);
 console.log(playerDamage);
+$("#enemy_weapon").html(`<p class="weapon_display">${...}</p><p>Damage: ${enemyDamage}</p>`);
 console.log(enemyDamage);
 enemy.health -= playerDamage;
 player.health -= enemyDamage;
