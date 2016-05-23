@@ -42,13 +42,13 @@ var Gauntlet = (function(aug){
     constructor function.
    */
   aug.Combatants.Peasant = function() {
+    this.species = "Peasant";
     this.health = this.health - 30;
     this.filth = 10;
     this.hunger = 10;
     this.poverty = 10;
     this.social_disease = 10;
     this.damnedness = 10;
-    this.allowedClasses = ["Tosher", "Mudlark", "Pauper"];
     this.allowedWeapon = ["your_Mother", "Curses", "character_Attacks"];
     this.generateClass = function() {
     // Get a random index from the allowed classes array
