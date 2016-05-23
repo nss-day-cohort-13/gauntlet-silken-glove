@@ -28,7 +28,7 @@ var Gauntlet = (function(money) {
   };
   money.GuildHall.LandedGentry.prototype = new Gauntlet.Combatants.Aristocrat();
 
-  money.GuildHall.ChivalrousCourter = function() {
+  money.GuildHall.ChivalrousCourtier = function() {
     this.name = "ChivalrousCourter";
     this.vigor -= 1;
     this.potency += 4;
@@ -36,7 +36,7 @@ var Gauntlet = (function(money) {
     this.pomposity += 4;
     this.social_grace += 3;
   };
-  money.GuildHall.ChivalrousCourter.prototype = new Gauntlet.Combatants.Aristocrat();
+  money.GuildHall.ChivalrousCourtier.prototype = new Gauntlet.Combatants.Aristocrat();
 
   return money;
 
