@@ -9,16 +9,16 @@ battle.combatSetup = function(userClass, userName, userWeapon) {
     player.name = userName;
     player.class = new Gauntlet.GuildHall[userClass];
     player.weapon = new Gauntlet[userWeapon];
-    $("#player_stats").html(`<p>adventurer: ${player.name}</p> <p>class: ${player.class}</p>
+    $("#player_stats").html(`<p>adventurer: ${player.name}</p> <p>class: ${player.class.name}</p>
       <p>species: ${player.species}</p> <p>health: ${player.health}</p> <p>strength: ${player.strength}</p>
       <p>weapon: ${player.weapon}</p>`)
   }
 
 battle.displayStats = function (){
-      $("#player_stats").html(`<p>adventurer: ${player.name}</p> <p>class: ${player.class}</p>
+      $("#player_stats").html(`<p>adventurer: ${player.name}</p> <p>class: ${player.class.name}</p>
       <p>species: ${player.species}</p> <p>health: ${player.health}</p> <p>strength: ${player.strength}</p>
       <p>weapon: ${player.weapon}</p>`);
-       $("#enemy_stats").html(`<p> enemy: ${enemy.name} </p> <p> class: ${enemy.class}</p> <p> species: ${enemy.species}</p>
+       $("#enemy_stats").html(`<p> enemy: ${enemy.name} </p> <p> class: ${enemy.class.name}</p> <p> species: ${enemy.species}</p>
       <p> health: ${enemy.health} </p>  <p> strength: ${enemy.strength} </p> <p>weapon: ${enemy.weapon}</p>`);
 }
 battle.enemySetup = function() {
@@ -26,7 +26,7 @@ battle.enemySetup = function() {
     enemy.generateClass();
     enemy.generateWeapon();
     console.log("enemy", enemy)
-    $("#enemy_stats").html(`<p> enemy: ${enemy.name} </p> <p> class: ${enemy.class}</p> <p> species: ${enemy.species}</p>
+    $("#enemy_stats").html(`<p> enemy: ${enemy.name} </p> <p> class: ${enemy.class.name}</p> <p> species: ${enemy.species}</p>
       <p> health: ${enemy.health} </p>  <p> strength: ${enemy.strength} </p> <p>weapon: ${enemy.weapon}</p>`);
 
 }
@@ -38,12 +38,16 @@ battle.enemySetup = function() {
 battle.combat = function() {
 var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage);
 var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
-$("#player_weapon").html(`<p class="weapon_display">${...}</p><p>Damage: ${playerDamage}</p>`);
+var playerPhrase =player.weapon.generatePhrase();
+var enemyPhrase = enemy.weapon.generatePhrase();
+console.log(playerPhrase);
+$("#player_weapon").html(`<p class="weapon_display">${playerPhrase}</p><p>Damage: ${playerDamage}</p>`);
 console.log(playerDamage);
-$("#enemy_weapon").html(`<p class="weapon_display">${...}</p><p>Damage: ${enemyDamage}</p>`);
+$("#enemy_weapon").html(`<p class="weapon_display">${enemyPhrase}</p><p>Damage: ${enemyDamage}</p>`);
 console.log(enemyDamage);
 enemy.health -= playerDamage;
 player.health -= enemyDamage;
+
 
 Gauntlet.displayStats();
 
