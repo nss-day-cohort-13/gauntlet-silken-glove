@@ -30,7 +30,7 @@ var Gauntlet = (function(aug){
     this.vigor = 10;
     this.potency = 10;
     this.richesse = 10;
-    this.allowedWeapon = ["AttacksOnMother", "Curses", "AttacksOnCharacter"];
+    this.allowedWeapon = ["your_Mother", "Curses", "character_Attacks"];
   };
   aug.Combatants.Aristocrat.prototype = new aug.Combatants.Player();
 
@@ -45,7 +45,7 @@ var Gauntlet = (function(aug){
     this.hunger = 10;
     this.poverty = 10;
     this.allowedClasses = ["Tosher", "Mudlark", "Pauper"];
-    this.allowedWeapon = ["Excrement", "Tomato", "Damnedness"];
+    this.allowedWeapon = ["your_Mother", "Curses", "character_Attacks"];
     this.generateClass = function() {
     // Get a random index from the allowed classes array
     var random = Math.round(Math.random() * (this.allowedClasses.length - 1));

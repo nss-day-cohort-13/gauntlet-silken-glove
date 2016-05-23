@@ -12,7 +12,7 @@ var Gauntlet = (function(ouch) {
       this.generatePhrase = function(){
         var random= Math.round(Math.random() * (this.phrases.length - 1));
         var randomPhrase = this.phrases[random];
-        console.log(randomPhrase);
+        return randomPhrase;
       };
 
       this.toString = function() {
