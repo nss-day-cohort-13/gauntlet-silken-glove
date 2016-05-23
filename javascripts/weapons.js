@@ -14,19 +14,19 @@ var Gauntlet = (function(ouch) {
       }
     };
 
-    ouch.Dirk = function() {
-      this.name = "Dirk";
+    ouch.Dagger = function() {
+      this.name = "dagger";
       this.damage = 4;
       this.hands = 1;
     };
-    ouch.Dirk.prototype = new ouch.Weapon();
+    ouch.Dagger.prototype = new ouch.Weapon();
 
-    ouch.Rapier = function() {
+    ouch.BroadSword = function() {
       this.name = "broad sword";
       this.damage = 14;
       this.hands = 2;
     };
-    ouch.Rapier.prototype = new ouch.Weapon();
+    ouch.BroadSword.prototype = new ouch.Weapon();
 
     ouch.WarAxe = function() {
       this.name = "war axe";
