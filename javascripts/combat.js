@@ -37,11 +37,13 @@ battle.enemySetup = function() {
 
 battle.combat = function() {
 var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage);
-var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
+var enemyDamage = Math.floor(Math.random() * 10 + enemy.weapon.damage);
 console.log(playerDamage);
 console.log(enemyDamage);
 enemy.health -= playerDamage;
 player.health -= enemyDamage;
+var playerPhrase = player.weapon.generatePhrase();
+var enemyPhrase = enemy.weapon.generatePhrase();
 
 Gauntlet.displayStats();
 

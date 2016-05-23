@@ -31,6 +31,7 @@ var Gauntlet = (function(aug){
     this.vigor = 10;
     this.potency = 10;
     this.richesse = 10;
+    this.allowedWeapon = ["AttacksOnMother", "Curses", "AttacksOnCharacter"];
   };
   aug.Combatants.Aristocrat.prototype = new aug.Combatants.Player();
 
