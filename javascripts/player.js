@@ -50,17 +50,6 @@ var Gauntlet = (function(aug){
     this.social_disease = 10;
     this.damnedness = 10;
     this.allowedWeapon = ["your_Mother", "Curses", "character_Attacks"];
-    this.generateClass = function() {
-    // Get a random index from the allowed classes array
-    var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
-
-    // Get the string at the index
-    var randomClass = this.allowedClasses[random];
-
-    // Composes the corresponding player class into the player object
-    this.class = new Gauntlet.GuildHall[randomClass]();
-    return this.class;
-    };
     this.generateWeapon = function() {
       var random = Math.round(Math.random()* (this.allowedWeapon.length - 1));
       var randomWeapon = this.allowedWeapon[random];
