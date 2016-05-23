@@ -46,46 +46,92 @@
 
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-lg-4">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue" href="#" next="card--weapon">
                 <span class="btn__prompt">></span>
                 <span class="btn__text">RobberBaron</span>
               </a>
             </div>
+            <div class="stat_select">
+              <p>Vigor: 12</p>
+              <p>Potency: 12</p>
+              <p>Richesse: 14</p>
+              <p>Pomposity: 17</p>
+              <p>Social Grace: 13</p>
+            </div>
+          </div>
 
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue" href="#" next="card--weapon">
                 <span class="btn__prompt">></span>
                 <span class="btn__text">LandedGentry</span>
               </a>
             </div>
+            <div class="stat_select">
+              <p>Vigor: 11</p>
+              <p>Potency: 18</p>
+              <p>Richesse: 10</p>
+              <p>Pomposity: 14</p>
+              <p>Social Grace: 15</p>
+            </div>
+          </div>
 
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
             <div class="card__button">
               <a class="class__link btn btn--big btn--blue" href="#" next="card--weapon">
                 <span class="btn__prompt">></span>
                 <span class="btn__text">ChivalrousCourtier</span>
               </a>
             </div>
-
-            <div class="card__button">
-              <a class="class__link btn btn--big btn--yellow" href="#" next="card--weapon">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">SurpriseMe</span>
-              </a>
+            <div class="stat_select">
+              <p>Vigor: 9</p>
+              <p>Potency: 14</p>
+              <p>Richesse: 19</p>
+              <p>Pomposity: 14</p>
+              <p>Social Grace: 13</p>
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <div class="stat_select">
+              <h4>Tosher</h4>
+              <p>Filth: 14</p>
+              <p>Hunger: 14</p>
+              <p>Poverty: 15</p>
+              <p>Social Disease: 12</p>
+              <p>Damnedness: 13</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <div class="stat_select">
+              <h4>Mudlark</h4>
+              <p>Filth: 13</p>
+              <p>Hunger: 15</p>
+              <p>Poverty: 13</p>
+              <p>Social Disease: 15</p>
+              <p>Damnedness: 12</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <div class="stat_select">
+              <h4>Pauper</h4>
+              <p>Filth: 11</p>
+              <p>Hunger: 16</p>
+              <p>Poverty: 13</p>
+              <p>Social Disease: 14</p>
+              <p>Damnedness: 14</p>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <div class="card__button">
-        <a class="card__link btn btn--big btn--orange"
-           href="#"
-           next="card--weapon">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">Select Weapon</span>
-        </a>
-      </div>
     </section>
 
     <section id="weapon-select" class="card card--weapon">
@@ -103,35 +149,25 @@
 
         <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-lg-4">
             <div class="card__button">
               <a class="weapon__link btn btn--big btn--blue" href="#" next="card--battleground">
                 <span class="btn__prompt">></span>
                 <span class="btn__text">Curses</span>
-
               </a>
             </div>
           </div>
-        </div>
-       </div>
 
-       <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-4">
+          <div class="col-lg-4">
             <div class="card__button">
               <a class="weapon__link btn btn--big btn--blue" href="#" next="card--battleground">
                 <span class="btn__prompt">></span>
                 <span class="btn__text">your_Mother</span>
-
               </a>
             </div>
           </div>
-        </div>
-       </div>
 
-       <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-4">
+          <div class="col-lg-4">
             <div class="card__button">
               <a class="weapon__link btn btn--big btn--blue" href="#" next="card--battleground">
                 <span class="btn__prompt">></span>
@@ -142,14 +178,6 @@
         </div>
        </div>
 
-      <!-- <div class="card__button">
-        <a class="card__link btn btn--big btn--orange"
-           href="#"
-           next="card--battleground">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">Defeat your enemies</span>
-        </a>
-      </div> -->
     </section>
 
     <section id="battleground" class="card card--battleground">
@@ -163,11 +191,19 @@
           </a>
         </div>
 
+        <div class="card__button">
+          <a class="btn btn--big btn--orange launchAttack"
+             href="#">
+            <span class="btn__prompt">></span>
+            <span class="btn__text">ATTACK</span>
+          </a>
+        </div>
+
         <div class="container-fluid">
           <div class="row">
             <div class="column col-lg-2">
             </div>
-            <div class="column col-lg-3">
+            <div class="column col-lg-4">
               <div id="player_stats">
               <!-- Player stats will be displayed in this div -->
               </div>
@@ -175,9 +211,7 @@
               <!-- Player weapon/insult will display in this div -->
               </div>
             </div>
-            <div class="column col-lg-2">
-            </div>
-            <div class="column col-lg-3">
+            <div class="column col-lg-4 right">
               <div id="enemy_stats">
               <!-- Enemy stats will be displayed in this div -->
               </div>
@@ -186,13 +220,6 @@
               </div>
             </div>
             <div class="column col-lg-2">
-            </div>
-            <div class="card__button">
-              <a class="btn btn--big btn--orange launchAttack"
-                 href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">ATTACK</span>
-              </a>
             </div>
           </div>
         </div>

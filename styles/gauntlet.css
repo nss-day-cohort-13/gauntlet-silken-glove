@@ -16,12 +16,16 @@ body {
   min-width: 500px;
 }
 
+.row {
+  margin-bottom: 50px;
+}
+
 
 
 /*
   Section styles
  */
-.card { 
+.card {
   display: none;
 }
 
@@ -34,8 +38,32 @@ body {
 
 .card__button {
   font-size: 1.1em;
-  margin: 30px 0 0 0;
+  margin: 20px;
   text-align: center;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+p {
+  font-size: .5em;
+}
+
+.player_name {
+  font-size: .75em;
+}
+
+.weapon_display {
+  font-size: .65em;
+}
+
+.stat_select {
+  font-size: 1.2em;
+}
+
+.right {
+  text-align: right;
 }
 
 
