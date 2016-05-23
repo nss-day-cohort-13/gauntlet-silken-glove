@@ -21,7 +21,7 @@ body {
 /*
   Section styles
  */
-.card { 
+.card {
   display: none;
 }
 
@@ -102,4 +102,8 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+
+.player-setup {
+  font-family: 'IM Fell English', serif;
 }
