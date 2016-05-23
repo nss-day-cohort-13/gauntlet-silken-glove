@@ -43,9 +43,9 @@ var Gauntlet = (function(aug){
   aug.Combatants.Aristocrat = function() {
     var randomSkin;
     this.species = "Aristocrat";
-    this.vigor = 90;
-    this.potency = 90;
-    this.richesse = 90;
+    this.vigor = 10;
+    this.potency = 10;
+    this.richesse = 10;
   };
   aug.Combatants.Aristocrat.prototype = new aug.Combatants.Player();
 
@@ -56,9 +56,9 @@ var Gauntlet = (function(aug){
    */
   aug.Combatants.Peasant = function() {
     this.health = this.health - 30;
-    this.filth = 90;
-    this.hunger = 90;
-    this.poverty = 90;
+    this.filth = 10;
+    this.hunger = 10;
+    this.poverty = 10;
     this.allowedClasses = ["Tosher", "Mudlark", "Pauper"];
     this.generateClass = function() {
     // Get a random index from the allowed classes array
