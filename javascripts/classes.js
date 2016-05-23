@@ -28,6 +28,7 @@ var Gauntlet = (function(money) {
   money.GuildHall.LandedGentry.prototype = new Gauntlet.Combatants.Aristocrat();
 
   money.GuildHall.ChivalrousCourtier = function() {
+    this.name = "ChivalrousCourter";
     this.class = "ChivalrousCourtier";
     this.vigor -= 1;
     this.potency += 4;
