@@ -25,6 +25,10 @@ $(document).ready(function() {
    */
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
+    nextPage(nextCard)
+  });
+
+  function nextPage (nextCard) {
     var moveAlong = false;
 
     switch (nextCard) {
@@ -47,8 +51,7 @@ $(document).ready(function() {
       $(".card").hide();
       $("." + nextCard).show();
     }
-  });
-
+  }
   /*
     When the back button clicked, move back a view
    */
@@ -82,4 +85,44 @@ $(document).ready(function() {
   */
   $(".launchAttack").click(Gauntlet.combat);
 
+
+//Player Name Text Field Listener.
+//This will listen for keyup on the Enter key
+//while the the Enter Name text field is selected
+//and will advance the player to the Class Selection screen.
+  $("#player-name").keyup(function(e){
+    if (e.which === 13) {
+      nextPage("card--class");
+    }
+  });
+
+  $(".btn--blue").click(function(e) {
+    var nextCard = $(this).attr("next");
+    nextPage(nextCard)
+  });
+
+ $(".btn--yellow").click(function(e) {
+    var nextCard = $(this).attr("next");
+    nextPage(nextCard)
+  });
+
 });
+
+
+
+
+//Button Listeners for All Three Player Classes.
+//This will listen for a click on those buttons and,
+//on click, will advance player to the Weapon Selection Screen.
+
+
+
+
+
+
+
+
+
+
+
+
