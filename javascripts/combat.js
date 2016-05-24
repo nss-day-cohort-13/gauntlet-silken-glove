@@ -3,53 +3,70 @@ var Gauntlet = (function(battle) {
 //Display the initial statistics for the player and the enemy.
 
 battle.combatSetup = function(userClass, userName, userWeapon) {
-  console.log("userClass", userClass);
-    player = new Gauntlet.GuildHall[userClass];
-    player.name = userName;
-    player.weapon = new Gauntlet[userWeapon];
-    player.vigor += player.weapon.vigorBonus;
-    player.potency += player.weapon.potencyBonus;
-    player.richesse += player.weapon.richesseBonus;
-    player.pomposity += player.weapon.pomposityBonus;
-    player.social_grace += player.weapon.graceBonus;
-    var random = Math.floor(Math.random() * Gauntlet.GuildHall.allowedEnemyClasses.length);
-    var enemyClass = Gauntlet.GuildHall.allowedEnemyClasses[random];
-    enemy = new Gauntlet.GuildHall[enemyClass];
-    enemy.generateWeapon();
-    Gauntlet.displayStats();
-  }
+  player = new Gauntlet.GuildHall[userClass];
+  player.name = userName;
+  player.weapon = new Gauntlet[userWeapon];
+  player.vigor += player.weapon.vigorBonus;
+  player.potency += player.weapon.potencyBonus;
+  player.richesse += player.weapon.richesseBonus;
+  player.pomposity += player.weapon.pomposityBonus;
+  player.social_grace += player.weapon.graceBonus;
+  var random = Math.floor(Math.random() * Gauntlet.GuildHall.allowedEnemyClasses.length);
+  var enemyClass = Gauntlet.GuildHall.allowedEnemyClasses[random];
+  enemy = new Gauntlet.GuildHall[enemyClass];
+  enemy.generateWeapon();
+  Gauntlet.displayStats();
+}
 
 battle.displayStats = function (){
-      $("#player_stats").html(`<p class="player_name">Adventurer: ${player.name}</p> <p class="player_name">Class: ${player.class}</p>
-      <p>Species: ${player.species}</p> <p>Health: ${player.health}</p>
-      <p>Vigor: ${player.vigor}</p>
-      <p>Potency: ${player.potency}</p>
-      <p>Richesse: ${player.richesse}</p>
-      <p>Pomposity: ${player.pomposity}</p>
-      <p>Social Grace: ${player.social_grace}</p>
-      <p>Weapon: ${player.weapon.name}</p>`);
-       $("#enemy_stats").html(`<p class="player_name"> Enemy: ${enemy.name} </p> <p class="player_name"> Class: ${enemy.class}</p> <p> Species: ${enemy.species}</p>
-      <p>Health: ${enemy.health} </p>
-      <p>Filth: ${enemy.filth}</p>
-      <p>Poverty: ${enemy.poverty}</p>
-      <p>Hunger: ${enemy.hunger}</p>
-      <p>Social Disease: ${enemy.social_disease}</p>
-      <p>Damnedness: ${enemy.damnedness}</p>
-      <p>Weapon: ${enemy.weapon.name}</p>`);
+  $("#player_stats").html(`<p class="player_name">Adventurer: ${player.name}</p> <p class="player_name">Class: ${player.class}</p>
+  <p>Species: ${player.species}</p> <p>Health: ${player.health}</p>
+  <p>Vigor: ${player.vigor}</p>
+  <p>Potency: ${player.potency}</p>
+  <p>Richesse: ${player.richesse}</p>
+  <p>Pomposity: ${player.pomposity}</p>
+  <p>Social Grace: ${player.social_grace}</p>
+  <p>Weapon: ${player.weapon.name}</p>`);
+   $("#enemy_stats").html(`<p class="player_name"> Enemy: ${enemy.name} </p> <p class="player_name"> Class: ${enemy.class}</p> <p> Species: ${enemy.species}</p>
+  <p>Health: ${enemy.health} </p>
+  <p>Filth: ${enemy.filth}</p>
+  <p>Poverty: ${enemy.poverty}</p>
+  <p>Hunger: ${enemy.hunger}</p>
+  <p>Social Disease: ${enemy.social_disease}</p>
+  <p>Damnedness: ${enemy.damnedness}</p>
+  <p>Weapon: ${enemy.weapon.name}</p>`);
 }
 
 //Have a button with the label "Attack".
  //Each time the attack button is clicked, the player's chosen character and the generated enemy shouLd
  //attack with their weapon, and once the damage is calculated, subtract that from the opponents' health.
 
+battle.calcDamage = function() {
+  var playerRoll = (Math.round(Math.random() * player.vigor));
+  playerRoll += (Math.round(Math.random() * player.potency));
+  playerRoll += (Math.round(Math.random() * player.richesse));
+  playerRoll += (Math.round(Math.random() * player.pomposity));
+  playerRoll += (Math.round(Math.random() * player.social_grace));
+  var enemyRoll = (Math.round(Math.random() * enemy.filth));
+  enemyRoll += (Math.round(Math.random() * enemy.hunger));
+  enemyRoll += (Math.round(Math.random() * enemy.poverty));
+  enemyRoll += (Math.round(Math.random() * enemy.social_disease));
+  enemyRoll += (Math.round(Math.random() * enemy.damnedness));
+  var statContest = playerRoll - enemyRoll;
+  console.log("playerRoll: ", playerRoll);
+  console.log("enemyRoll: ", enemyRoll);
+  console.log("statContest: ", statContest);
+  return statContest;
+}
 
 battle.combat = function() {
   if ($(".launchAttack").attr("disabled")) {
     return;
   } else {
-    var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage + (player.vigor - enemy.filth) + (player.potency - enemy.hunger) + (player.richesse - enemy.poverty) + (player.pomposity - enemy.social_disease) + (player.social_grace - enemy.damnedness));
-    var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage + (enemy.filth - player.vigor) + (enemy.hunger - player.potency) + (enemy.poverty - player.richesse) + (enemy.social_disease - player.pomposity) + (enemy.damnedness - player.social_grace));
-    var playerPhrase =player.weapon.generatePhrase();
+    var statContest = Gauntlet.calcDamage();
+    var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage + statContest);
+    var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage - statContest);
+    var playerPhrase = player.weapon.generatePhrase();
     var enemyPhrase = enemy.weapon.generatePhrase();
     $("#player_weapon").html(`<p class="weapon_display">${playerPhrase}</p><p class="weapon_display">Damage: ${playerDamage}</p>`);
     console.log(playerDamage);
