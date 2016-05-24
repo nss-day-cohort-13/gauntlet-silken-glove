@@ -20,15 +20,17 @@ battle.combatSetup = function(userClass, userName, userWeapon) {
 
 battle.displayStats = function (){
   $("#player_stats").html(`<p class="player_name">Adventurer: ${player.name}</p> <p class="player_name">Class: ${player.class}</p>
-  <p>Species: ${player.species}</p> <p>Health: ${player.health}</p>
+  <p class="player_name">Health: ${player.health}</p>
+  <p>Species: ${player.species}</p>
   <p>Vigor: ${player.vigor}</p>
   <p>Potency: ${player.potency}</p>
   <p>Richesse: ${player.richesse}</p>
   <p>Pomposity: ${player.pomposity}</p>
   <p>Social Grace: ${player.social_grace}</p>
   <p>Weapon: ${player.weapon.name}</p>`);
-   $("#enemy_stats").html(`<p class="player_name"> Enemy: ${enemy.name} </p> <p class="player_name"> Class: ${enemy.class}</p> <p> Species: ${enemy.species}</p>
-  <p>Health: ${enemy.health} </p>
+  $("#enemy_stats").html(`<p class="player_name"> Enemy: ${enemy.name} </p> <p class="player_name"> Class: ${enemy.class}</p>
+  <p class="player_name">Health: ${enemy.health} </p>
+  <p>Species: ${enemy.species}</p>
   <p>Filth: ${enemy.filth}</p>
   <p>Poverty: ${enemy.poverty}</p>
   <p>Hunger: ${enemy.hunger}</p>
@@ -42,16 +44,16 @@ battle.displayStats = function (){
  //attack with their weapon, and once the damage is calculated, subtract that from the opponents' health.
 
 battle.calcDamage = function() {
-  var playerRoll = (Math.round(Math.random() * player.vigor));
-  playerRoll += (Math.round(Math.random() * player.potency));
-  playerRoll += (Math.round(Math.random() * player.richesse));
-  playerRoll += (Math.round(Math.random() * player.pomposity));
-  playerRoll += (Math.round(Math.random() * player.social_grace));
-  var enemyRoll = (Math.round(Math.random() * enemy.filth));
-  enemyRoll += (Math.round(Math.random() * enemy.hunger));
-  enemyRoll += (Math.round(Math.random() * enemy.poverty));
-  enemyRoll += (Math.round(Math.random() * enemy.social_disease));
-  enemyRoll += (Math.round(Math.random() * enemy.damnedness));
+  var playerRoll = (Math.round(Math.random() * (player.vigor - 10)));
+  playerRoll += (Math.round(Math.random() * (player.potency - 10)));
+  playerRoll += (Math.round(Math.random() * (player.richesse - 10)));
+  playerRoll += (Math.round(Math.random() * (player.pomposity - 10)));
+  playerRoll += (Math.round(Math.random() * (player.social_grace - 10)));
+  var enemyRoll = (Math.round(Math.random() * (enemy.filth - 10)));
+  enemyRoll += (Math.round(Math.random() * (enemy.hunger - 10)));
+  enemyRoll += (Math.round(Math.random() * (enemy.poverty - 10)));
+  enemyRoll += (Math.round(Math.random() * (enemy.social_disease - 10)));
+  enemyRoll += (Math.round(Math.random() * (enemy.damnedness - 10)));
   var statContest = playerRoll - enemyRoll;
   console.log("playerRoll: ", playerRoll);
   console.log("enemyRoll: ", enemyRoll);
@@ -91,13 +93,3 @@ battle.combat = function() {
 return battle;
 
 })(Gauntlet || {});
-
-
-
-
-
-
-
-
-
-
