@@ -6,6 +6,11 @@ var Gauntlet = (function(ouch) {
 
     ouch.Weapon = function() {
       this.damage = 10;
+      this.vigorBonus = 0;
+      this.potencyBonus = 0;
+      this.richesseBonus = 0;
+      this.pomposityBonus = 0;
+      this.graceBonus = 0;
       this.generatePhrase = function(){
         var random = Math.floor(Math.random() * (this.phrases.length - 1));
         var randomPhrase = this.phrases[random];

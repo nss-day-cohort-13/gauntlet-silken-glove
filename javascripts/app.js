@@ -43,7 +43,6 @@ $(document).ready(function() {
       case "card--battleground":
         moveAlong = (userWeapon !== "");
         Gauntlet.combatSetup(userClass, userName, userWeapon);
-        Gauntlet.enemySetup();
         break;
     }
 
