@@ -10,7 +10,7 @@ var Gauntlet = (function(ouch) {
       this.hands = 2;
 
       this.generatePhrase = function(){
-        var random= Math.round(Math.random() * (this.phrases.length - 1));
+        var random = Math.floor(Math.random() * (this.phrases.length - 1));
         var randomPhrase = this.phrases[random];
         return randomPhrase;
       };
@@ -55,7 +55,7 @@ var Gauntlet = (function(ouch) {
     };
     ouch.your_Mother.prototype = new ouch.Weapon();
 
-    ouch.Curses = function(){
+    ouch.curses = function(){
       this.name ="Curses";
       this.damage = 15;
       this.phrases = [`"May a thousand syphalitic camels spit in your cous cous!"`,
@@ -64,7 +64,7 @@ var Gauntlet = (function(ouch) {
                       `"May your wits be so dim that you cannot steal oxygen from the very air you breathe!"`
                       ];
     };
-    ouch.Curses.prototype = new ouch.Weapon();
+    ouch.curses.prototype = new ouch.Weapon();
 
     ouch.character_Attacks = function(){
       this.name = "Attacks on character";
