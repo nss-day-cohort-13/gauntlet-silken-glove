@@ -52,7 +52,7 @@ var Gauntlet = (function(aug){
     this.poverty = 10;
     this.social_disease = 10;
     this.damnedness = 10;
-    this.allowedWeapon = ["your_Mother", "Curses", "character_Attacks"];
+    this.allowedWeapon = ["excrement", "rotten_fruit"];
     this.generateWeapon = function() {
       var random = Math.round(Math.random()* (this.allowedWeapon.length - 1));
       var randomWeapon = this.allowedWeapon[random];
@@ -65,3 +65,5 @@ var Gauntlet = (function(aug){
   return aug;
 
 }(Gauntlet || {}));
+
+
