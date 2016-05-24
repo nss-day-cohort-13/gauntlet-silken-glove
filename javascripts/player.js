@@ -65,5 +65,3 @@ var Gauntlet = (function(aug){
   return aug;
 
 }(Gauntlet || {}));
-
-
