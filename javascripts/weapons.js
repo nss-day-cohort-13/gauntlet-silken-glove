@@ -10,7 +10,7 @@ var Gauntlet = (function(ouch) {
       this.hands = 2;
 
       this.generatePhrase = function(){
-        var random= Math.round(Math.random() * (this.phrases.length - 1));
+        var random = Math.floor(Math.random() * (this.phrases.length - 1));
         var randomPhrase = this.phrases[random];
         return randomPhrase;
       };
