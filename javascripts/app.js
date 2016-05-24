@@ -66,8 +66,7 @@ $(document).ready(function() {
     is stored in userClass.
   */
   $(".class__link").click(function(e){
-    userClass = $(this).children("span.btn__text").text();
-    console.log("userClass: ", userClass);
+    userClass = $(this).attr("name");
   });
 
   /*
@@ -75,8 +74,7 @@ $(document).ready(function() {
     is stored in userWeapon.
   */
   $(".weapon__link").click(function(e){
-    userWeapon = $(this).children("span.btn__text").text();
-    console.log("userWeapon: ", userWeapon);
+    userWeapon = $(this).attr("name");
   });
 
   /*
