@@ -56,30 +56,32 @@ battle.enemySetup = function() {
 
 
 battle.combat = function() {
-var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage);
-var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
-var playerPhrase =player.weapon.generatePhrase();
-var enemyPhrase = enemy.weapon.generatePhrase();
-console.log(playerPhrase);
-$("#player_weapon").html(`<p class="weapon_display">${playerPhrase}</p><p class="weapon_display">Damage: ${playerDamage}</p>`);
-console.log(playerDamage);
-$("#enemy_weapon").html(`<p class="weapon_display">${enemyPhrase}</p><p class="weapon_display">Damage: ${enemyDamage}</p>`);
-console.log(enemyDamage);
-enemy.health -= playerDamage;
-player.health -= enemyDamage;
-
-
-Gauntlet.displayStats();
-
-  if (enemy.health <= 0 && player.health <=0){
+  if ($(".launchAttack").attr("disabled")) {
+    return;
+  } else {
+    var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage);
+    var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
+    var playerPhrase =player.weapon.generatePhrase();
+    var enemyPhrase = enemy.weapon.generatePhrase();
+    console.log(playerPhrase);
+    $("#player_weapon").html(`<p class="weapon_display">${playerPhrase}</p><p class="weapon_display">Damage: ${playerDamage}</p>`);
+    console.log(playerDamage);
+    $("#enemy_weapon").html(`<p class="weapon_display">${enemyPhrase}</p><p class="weapon_display">Damage: ${enemyDamage}</p>`);
+    console.log(enemyDamage);
+    enemy.health -= playerDamage;
+    player.health -= enemyDamage;
+    Gauntlet.displayStats();
+    if (enemy.health <= 0 && player.health <=0){
+      $('.launchAttack').attr("disabled", "disabled");
       alert("both died at the same time")
-  } else if (enemy.health <= 0) {
-      $('.attack'). disabled = true;
-      alert(player.name + ' has slain ' + enemy.name);
-        } else if (player.health <= 0) {
-            $('.attack'). disabled = true;
-            alert(enemy.name + ' has slain ' + player.name);
+    } else if (enemy.health <= 0) {
+        $('.launchAttack').attr("disabled", "disabled");
+        alert(player.name + ' has slain ' + enemy.name);
+      } else if (player.health <= 0) {
+          $('.launchAttack').attr("disabled", "disabled");
+          alert(enemy.name + ' has slain ' + player.name);
         };
+    }
 
 }
 return battle;

@@ -8,7 +8,7 @@ var Gauntlet = (function(money) {
   money.GuildHall = {};
 
   money.GuildHall.RobberBaron = function() {
-    this.class = "RobberBaron"
+    this.class = "Robber Baron"
     this.vigor += 2;
     this.potency += 2;
     this.richesse += 4;
@@ -18,7 +18,7 @@ var Gauntlet = (function(money) {
   money.GuildHall.RobberBaron.prototype = new Gauntlet.Combatants.Aristocrat();
 
   money.GuildHall.LandedGentry = function() {
-    this.class = "LandedGentry";
+    this.class = "Landed Gentry";
     this.vigor += 1;
     this.potency += 8;
     this.richesse += 0;
@@ -28,8 +28,7 @@ var Gauntlet = (function(money) {
   money.GuildHall.LandedGentry.prototype = new Gauntlet.Combatants.Aristocrat();
 
   money.GuildHall.ChivalrousCourtier = function() {
-    this.name = "ChivalrousCourter";
-    this.class = "ChivalrousCourtier";
+    this.class = "Chivalrous Courtier";
     this.vigor -= 1;
     this.potency += 4;
     this.richesse += 9;
