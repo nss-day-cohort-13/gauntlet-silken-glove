@@ -73,13 +73,13 @@ battle.combat = function() {
     Gauntlet.displayStats();
     if (enemy.health <= 0 && player.health <=0){
       $('.launchAttack').attr("disabled", "disabled");
-      alert("both died at the same time")
+      alert("That wretched peasant got the better of you, but by God, you weren't vanquished in vain! You are carried off to be tended to on your chaise while that rotten fool is being carted to prison where he belongs.")
     } else if (enemy.health <= 0) {
         $('.launchAttack').attr("disabled", "disabled");
-        alert(player.name + ' has slain ' + enemy.name);
+        alert("Good show, old boy! That peasant's wretched constitution couldn't withstand your assault. His limp frame is dragged off by the authorities.");
       } else if (player.health <= 0) {
           $('.launchAttack').attr("disabled", "disabled");
-          alert(enemy.name + ' has slain ' + player.name);
+          alert("Zounds! You swoon as the peasant overcomes you with his damnedness. He attempts to flee, but is arrested tout de suite and thrown in a dungeon.");
         };
     }
 
