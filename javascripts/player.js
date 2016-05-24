@@ -10,10 +10,13 @@ var Gauntlet = (function(aug){
     whether a human player or a monster.
    */
   aug.Combatants.Player = function(name) {
+    this.enemyNames = ["Tickle-brained Tim", "Saucy Sally", "Pungent Pam", "Bootless Bill", "Dankish Dan", "Incestuous Irene"]
+    var random = Math.round(Math.random() * (this.enemyNames.length));
+    var randomEnemy = this.enemyNames[random];
     this.species = null;
     this.class = null;
     this.weapon = null;
-    this.name = this.name || "unknown adventurer";
+    this.name = this.name || randomEnemy;
     this.health = Math.floor(Math.random() * 40 + 50);
   };
 
@@ -62,4 +65,3 @@ var Gauntlet = (function(aug){
   return aug;
 
 }(Gauntlet || {}));
-
