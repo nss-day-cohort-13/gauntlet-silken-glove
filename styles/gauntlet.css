@@ -89,7 +89,7 @@ p {
 .btn--orange {
   border-color: #D4AF37;
   color: white;
-  background-color:#800000;
+  background-color:#9a0000;
 }
 
 .btn--blue {
@@ -152,6 +152,7 @@ p {
   border: solid #D4AF37;
   border-width: 6px 6px 3px 6px;
   background-color: #F8ECC2;
+  font-size: 1.4em;
 }
 
 #player_weapon,
@@ -160,4 +161,13 @@ p {
   border: solid #D4AF37;
   border-width: 3px 6px 6px 6px;
   background-color: #F8ECC2;
+}
+
+.stat_select {
+  background-color: #F8ECC2;
+  border: 3px solid #D4AF37;
+  border-radius: 3px;
+
+}
+
 }
