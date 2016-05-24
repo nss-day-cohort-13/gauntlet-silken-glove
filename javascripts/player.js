@@ -11,7 +11,7 @@ var Gauntlet = (function(aug){
    */
   aug.Combatants.Player = function(name) {
     this.enemyNames = ["Tickle-brained Tim", "Saucy Sally", "Pungent Pam", "Bootless Bill", "Dankish Dan", "Incestuous Irene"]
-    var random = Math.round(Math.random() * (this.enemyNames.length - 1));
+    var random = Math.round(Math.random() * (this.enemyNames.length));
     var randomEnemy = this.enemyNames[random];
     this.species = null;
     this.class = null;
