@@ -59,11 +59,10 @@ battle.combat = function() {
   if ($(".launchAttack").attr("disabled")) {
     return;
   } else {
-    var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage);
-    var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage);
+    var playerDamage = Math.floor(Math.random() * 10 + player.weapon.damage + (player.vigor - enemy.filth) + (player.potency - enemy.hunger) + (player.richesse - enemy.poverty) + (player.pomposity - enemy.social_disease) + (player.social_grace - enemy.damnedness));
+    var enemyDamage =Math.floor(Math.random() * 10 + enemy.weapon.damage + (enemy.filth - player.vigor) + (enemy.hunger - player.potency) + (enemy.poverty - player.richesse) + (enemy.social_disease - player.pomposity) + (enemy.damnedness - player.social_grace));
     var playerPhrase =player.weapon.generatePhrase();
     var enemyPhrase = enemy.weapon.generatePhrase();
-    console.log(playerPhrase);
     $("#player_weapon").html(`<p class="weapon_display">${playerPhrase}</p><p class="weapon_display">Damage: ${playerDamage}</p>`);
     console.log(playerDamage);
     $("#enemy_weapon").html(`<p class="weapon_display">${enemyPhrase}</p><p class="weapon_display">Damage: ${enemyDamage}</p>`);
