@@ -47,7 +47,7 @@ var Gauntlet = (function(ouch) {
                       `"May the flies from a thousand horse droppings land in your stew!"`,
                       `"May your wits be so dim that you cannot steal oxygen from the very air you breathe!"`,
                       `"Damn your seventh grandmother!"`,
-                      `"May the stench of a thousand linden trees perfume your collar!"`
+                      `"May the stench of a thousand linden trees perfume your collar!"`,
                       `"May a thousand tax collectors of ten thousand audits find you eating the Queen's venison."`,
                       `"May your daughter inherit your nose and your son your breasts."`,
                       `"May you be visited on your death bed by everyone who now thinks you pretty."`,
