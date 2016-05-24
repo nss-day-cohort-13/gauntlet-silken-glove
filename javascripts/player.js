@@ -46,7 +46,7 @@ var Gauntlet = (function(aug){
    */
   aug.Combatants.Peasant = function() {
     this.species = "Peasant";
-    this.health = this.health - 30;
+    this.health = this.health - 20;
     this.filth = 10;
     this.hunger = 10;
     this.poverty = 10;
